@@ -1,18 +1,9 @@
 package hello;
 
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
-
-class Pallindrom{
-    
-    
-    
-    
-    
-    
-    
-    
-    
-}
 
 @RestController
 public class WordController {
@@ -66,7 +57,7 @@ public class WordController {
             
         }
         
-                Pallindrome p=new Pallindrome(word, pallindrom, anagramOfPallindrom);
+        Pallindrome p=new Pallindrome(word, pallindrom, anagramOfPallindrom);
         return p;
 
         
