@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.RestController;
 public class WordController {
     // TODO Implement the /words/{word} endpoint
     
-    @RequestMapping(value="/words/{word}", method = RequestMethod.GET)
+    @RequestMapping(value="/words/{word}", method = RequestMethod.GET, produces=MediaType.APPLICATION_JSON_VALUE)
     public Pallindrome testPallin(
             @PathVariable("word") String word){
              
