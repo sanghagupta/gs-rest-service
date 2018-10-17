@@ -19,9 +19,9 @@ public class WordController {
     // TODO Implement the /words/{word} endpoint
     
     @RequestMapping(value="/words/{word}", method = RequestMethod.GET)
-    public Pallindrom testPallin(
+    public Pallindrome testPallin(
             @PathVariable("word") String word){
-     
+             
         
         String  reverse = ""; // Objects of String class
         boolean pallindrom=false, anagramOfPallindrom=false;
@@ -61,11 +61,14 @@ public class WordController {
         } 
   
         // anagramOfPallindrom is true if odd count is 0 or 1, 
+        if (odd == 1  || odd==0) 
         anagramOfPallindrom= true; 
             
         }
         
-        
+                Pallindrome p=new Pallindrome(word, pallindrom, anagramOfPallindrom);
+        return p;
+
         
       
     }
