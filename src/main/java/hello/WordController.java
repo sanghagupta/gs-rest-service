@@ -9,13 +9,14 @@ import org.springframework.web.bind.annotation.RestController;
 public class WordController {
     // TODO Implement the /words/{word} endpoint
     
-    @RequestMapping(value="/words/{word}", method = RequestMethod.GET, produces=MediaType.APPLICATION_JSON_VALUE)
+    @RequestMapping(value="/words/{word}", method = RequestMethod.GET)
     public Pallindrome testPallin(
             @PathVariable("word") String word){
              
         
         String  reverse = ""; // Objects of String class
-        boolean pallindrom=false, anagramOfPallindrom=false;
+        
+        boolean palindrome=false, anagramOfPalindrome=false;
      
       int length = word.length();
      
@@ -23,12 +24,12 @@ public class WordController {
          reverse = reverse + word.charAt(i);
          
       if (word.equals(reverse)){
-         pallindrom=true; 
-          anagramOfPallindrom=true;
+         palindrome=true; 
+          anagramOfPalindrome=true;
       }
       
         
-        if(pallindrom==false){
+        if(palindrome==false){
         
             final int NO_OF_CHARS = 256; 
               // Create a count array and initialize 
@@ -48,16 +49,16 @@ public class WordController {
                 odd++; 
   
             if (odd > 1) 
-                anagramOfPallindrom= false; 
+                anagramOfPalindrome= false; 
         } 
   
         // anagramOfPallindrom is true if odd count is 0 or 1, 
         if (odd == 1  || odd==0) 
-        anagramOfPallindrom= true; 
+        anagramOfPalindrome= true; 
             
         }
         
-        Pallindrome p=new Pallindrome(word, pallindrom, anagramOfPallindrom);
+        Pallindrome p=new Pallindrome(word, palindrome, anagramOfPalindrome);
         return p;
 
         
